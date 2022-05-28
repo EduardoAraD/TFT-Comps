@@ -6,6 +6,6 @@ export interface Champions {
   space: number;
   sinergys: SinergyChamp[];
   description: string;
-  danoBase: "AP" | "AD";
-  danoHab: "AP" | "AD" | "-";
+  danoPrinc: string;
+  itemization: string;
 }

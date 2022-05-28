@@ -10,6 +10,7 @@ export const Container = styled.button`
   border: none;
   border-radius: 10px;
   padding: 0.8rem;
+  margin-top: 1rem;
 
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
