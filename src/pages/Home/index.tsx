@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { OptionsHeader } from '../../components/OptionsHeader';
 import { BestComps } from '../BestComps';
-import { Cadastro } from '../Cadastro';
+import { Champions } from '../Champions';
 import { Sinergys } from '../Sinergys';
 import { Container } from './styles';
 
@@ -37,7 +37,7 @@ export const Home: React.FC = () => {
           ) : (options === 1 ? (
             <Sinergys />
           ) : (
-            <Cadastro />
+            <Champions />
           ))}
         </div>
       </div>

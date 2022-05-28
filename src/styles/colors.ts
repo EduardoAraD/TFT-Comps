@@ -7,4 +7,5 @@ export const colors = {
   text: '#232323',
   background: '#f1f1f1',
   white: '#FFFFFF',
+  dourad: '#B8860B'
 }

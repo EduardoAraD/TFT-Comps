@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { OptionsHeader } from '../../components/OptionsHeader';
-import { CadastroSinergy } from '../CadastroSinergys';
-import { ListSinergy } from '../ListSinergy';
+import { CadastroChampions } from '../CadastroChampions';
+import { ListChampions } from '../ListChampions';
 import { Container } from './styles';
 
-export const Sinergys: React.FC = () => {
+export const Champions: React.FC = () => {
   const [isCadastro, setIsCadastro] = useState(false);
 
   return (
@@ -24,9 +24,9 @@ export const Sinergys: React.FC = () => {
         ]}
       />
       {isCadastro ? (
-        <CadastroSinergy/>
+        <CadastroChampions/>
       ) : (
-        <ListSinergy />
+        <ListChampions />
       )}
     </Container>
   );

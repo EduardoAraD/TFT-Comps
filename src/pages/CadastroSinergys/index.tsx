@@ -2,7 +2,8 @@ import React, { useCallback, useState } from 'react';
 import { FiPlus, FiTrash } from 'react-icons/fi';
 import { Button } from '../../components/Button';
 import { InputLabel } from '../../components/InputLabel';
-import { ScaleBonus } from '../../models/Sinergy';
+import { ScaleBonus, Sinergy } from '../../models/Sinergy';
+import { LSSinergy } from '../../utils/keysLocalStorage';
 import { Container } from './styles';
 
 export const CadastroSinergy :React.FC = () => {
@@ -25,7 +26,16 @@ export const CadastroSinergy :React.FC = () => {
   const handleSubmit = useCallback((event: any) => {
     event.preventDefault();
 
-    console.log(name, description, scale);
+    const sinergysStorage = localStorage.getItem(LSSinergy);
+    let sinergys: Sinergy[] = sinergysStorage !== null ? JSON.parse(sinergysStorage) : [];
+    const sinergy: Sinergy = {
+      description: description,
+      name: name,
+      scale: scale,
+    }
+    sinergys.push(sinergy);
+
+    localStorage.setItem(LSSinergy,JSON.stringify(sinergys));
   }, [description, name, scale]);
 
   return (
