@@ -5,6 +5,9 @@ export const BestComps: React.FC = () => {
   return (
     <Container>
       <h1>Melhores comps encontradas</h1>
+      <div className="option">
+        
+      </div>
     </Container>
   );
 }

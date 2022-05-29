@@ -18,6 +18,7 @@ export const Container = styled.div`
       flex-direction: column;
       border-radius: 1rem;
       padding: 0.6rem;
+      max-width: 500px;
 
       .item-info {
         display: flex;

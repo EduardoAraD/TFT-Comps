@@ -8,16 +8,6 @@ import { Sinergy, SinergyChamp } from '../../models/Sinergy';
 import { LSChampions, LSSinergy } from '../../utils/keysLocalStorage';
 import { Container } from './styles';
 
-/*
-  name: string;
-  cost: number;
-  space: number;
-  sinergys: SinergyChamp[];
-  description: string;
-  danoBase: "AP" | "AD";
-  danoHab: "AP" | "AD" | "-";
-*/
-
 export const CadastroChampions: React.FC = () => {
   const [name, setName] = useState('');
   const [cost, setCost] = useState('1');
@@ -34,8 +24,12 @@ export const CadastroChampions: React.FC = () => {
 
   useEffect(() => {
     const sinergysStorage = localStorage.getItem(LSSinergy);
-    const sinerg = sinergysStorage !== null ? JSON.parse(sinergysStorage) : [];
-    setSinergysAll(sinerg);
+    const sinerg: Sinergy[] = sinergysStorage !== null ? JSON.parse(sinergysStorage) : [];
+    setSinergysAll(sinerg.sort((a, b) => {
+      if(a.name > b.name) return 1;
+      else if(a.name < b.name) return -1;
+      else return 0;
+    }));
   }, []);
 
   const handleAddSinergy = useCallback(() => {
@@ -64,6 +58,13 @@ export const CadastroChampions: React.FC = () => {
     champions.push(champion);
 
     localStorage.setItem(LSChampions,JSON.stringify(champions));
+    setName('');
+    setCost('1');
+    setDanoPrinc('');
+    setSinergs([]);
+    setSpace('1');
+    setItemization('');
+    setSinergyEdit({ name: '', valor: 1 });
   }, [cost, danoPrinc, description, itemization, name, sinergys, space]);
 
   return (

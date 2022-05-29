@@ -13,6 +13,7 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     row-gap: 1rem;
+    max-width: 400px;
 
     .option {
       width: 100%;

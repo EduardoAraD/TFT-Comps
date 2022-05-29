@@ -74,6 +74,7 @@ export const Container = styled.div`
           flex: 1;
           margin: 0px;
           color: ${colors.text};
+          max-width: 300px;
         }
 
         button {
