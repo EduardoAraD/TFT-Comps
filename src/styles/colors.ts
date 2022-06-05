@@ -1,5 +1,6 @@
 export const colors = {
   primary: '#232323',
+  primaryHover: '#343434',
   green: '#33cc33',
   greenHover: '#339933',
   red: '#ff4d4d',
